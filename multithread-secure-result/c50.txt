@@ -1,0 +1,54 @@
+$ abs -n 1000 -c 50 -l -k -f SSL2 https://localhost:8443/
+This is ApacheBench, Version 2.3 <$Revision: 1903618 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient)
+SSL read failed (1) - closing connection
+08380000:error:0A000126:SSL routines:ssl3_read_n:unexpected eof while reading:ssl\record\rec_layer_s3.c:322:
+...
+...
+...
+Completed 1000 requests
+Finished 1000 requests
+
+
+Server Software:        myserver/1.0
+Server Hostname:        localhost
+Server Port:            8443
+SSL/TLS Protocol:       TLSv1.3,TLS_AES_256_GCM_SHA384,2048,256
+Server Temp Key:        X25519 253 bits
+TLS Server Name:        localhost
+
+Document Path:          /
+Document Length:        Variable
+
+Concurrency Level:      50
+Time taken for tests:   562.782 seconds
+Complete requests:      1000
+Failed requests:        0
+Keep-Alive requests:    0
+Total transferred:      147000 bytes
+HTML transferred:       35000 bytes
+Requests per second:    1.78 [#/sec] (mean)
+Time per request:       28139.103 [ms] (mean)
+Time per request:       562.782 [ms] (mean, across all concurrent requests)
+Transfer rate:          0.26 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        5 25449 31323.2  14383  122736
+Processing:     8 1939 3132.2    865   19185
+Waiting:        2 1880 3060.9    838   18950
+Total:         31 27387 32895.1  15481  125740
+
+Percentage of the requests served within a certain time (ms)
+  50%  15481
+  66%  19921
+  75%  28412
+  80%  47106
+  90%  91302
+  95%  107611
+  98%  113844
+  99%  117212
+ 100%  125740 (longest request)
